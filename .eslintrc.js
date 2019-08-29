@@ -1,6 +1,3 @@
-const { resolve } = require('path');
-const { readdirSync } = require('fs');
-
 const restrictedModules = { paths: ['gulp-util'] };
 
 const APACHE_2_0_LICENSE_HEADER = `
@@ -110,12 +107,7 @@ module.exports = {
             forceNode: false,
             rootPackageName: 'kibana',
             kibanaPath: '.',
-            pluginMap: readdirSync(resolve(__dirname, 'x-pack/plugins')).reduce((acc, name) => {
-              if (!name.startsWith('_')) {
-                acc[name] = `x-pack/plugins/${name}`;
-              }
-              return acc;
-            }, {}),
+            pluginMap: {},
           },
         },
       },
