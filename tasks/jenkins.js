@@ -31,7 +31,6 @@ module.exports = function (grunt) {
     'run:i18nCheck',
     'run:checkFileCasing',
     'licenses',
-    'verifyDependencyVersions',
     'run:verifyNotice',
     'test:server',
     'test:jest',
