@@ -60,7 +60,7 @@ const CAN_CLUSTER = canRequire(CLUSTER_MANAGER_PATH);
 const XPACK_INSTALLED_DIR = resolve(__dirname, '../../../node_modules/x-pack');
 const XPACK_SOURCE_DIR = resolve(__dirname, '../../../x-pack');
 const XPACK_INSTALLED = canRequire(XPACK_INSTALLED_DIR);
-const XPACK_OPTIONAL = isSymlinkTo(XPACK_INSTALLED_DIR, XPACK_SOURCE_DIR);
+const XPACK_OPTIONAL = !XPACK_INSTALLED || isSymlinkTo(XPACK_INSTALLED_DIR, XPACK_SOURCE_DIR);
 
 const pathCollector = function () {
   const paths = [];
