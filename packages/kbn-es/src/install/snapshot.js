@@ -150,7 +150,7 @@ function getFilename(license, version) {
     const extension = os.platform().startsWith('win') ? 'zip' : 'tar.gz';
     const basename = `elasticsearch${license === 'oss' ? '-oss-' : '-'}${version}`;
 
-    return `${basename}-SNAPSHOT.${extension}`;
+    return `${basename}.${extension}`;
   }
 
   const platform = os.platform();
@@ -175,10 +175,10 @@ function getFilename(license, version) {
 
 function getUrl(fileName) {
   if (process.env.TEST_ES_SNAPSHOT_VERSION) {
-    return `https://snapshots.elastic.co/${
+    return `https://artifacts.elastic.co/${
       process.env.TEST_ES_SNAPSHOT_VERSION
     }/downloads/elasticsearch/${fileName}`;
   } else {
-    return `https://snapshots.elastic.co/downloads/elasticsearch/${fileName}`;
+    return `https://artifacts.elastic.co/downloads/elasticsearch/${fileName}`;
   }
 }
